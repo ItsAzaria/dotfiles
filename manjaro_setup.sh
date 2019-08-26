@@ -1,26 +1,25 @@
-#!/usr/bin/sudo bash
+#!/usr/bin/env bash
 
-read -r -p "This weill setup the manjaro environment. Continue? [y/n] " response
+read -r -p "This will setup the manjaro environment. Continue? [y/n] " response
 response=${response,,}
 if [[ "$response" =~ ^(yes|y)$ ]]
 then
-	echo "Updating packages"
-	pacman -Syuu
+	# Update packages
+	sudo pacman -Syuu
 	
-	echo "Installing yay"
-	pacman -S yay --noconfirm
+	# Install yay
+	sudo pacman -S yay --noconfirm
 	
 	packages=()
 	
-	
 	# Essential
-	packages+=('vivaldi bitwarden-bin proton-cli sharenix-git megasync insync qbittorrent')
+	packages+=('vivaldi bitwarden-bin protonvpn-cli sharenix-git megasync insync qbittorrent')
 	
 	# Music
 	packages+=('spotify-dev spotify-adblock-git')
 	
 	# Media
-	packages+=('dontpanic-latest popcorntime-bin kodi cpod freetube-bin')
+	packages+=('dontpanic-latest popcorntime-bin kodi cpod-bin freetube-bin')
 	
 	# Social
 	packages+=('discord-canary')
@@ -32,7 +31,7 @@ then
 	packages+=('code emacs')
 	
 	# Tools
-	packages+=('postman npm masterpdfeditor-free')
+	packages+=('postman-bin npm masterpdfeditor-free')
 	
 	# Docker
 	packages+=('docker lazydocker')
@@ -70,10 +69,9 @@ then
 	if [[ "$response" =~ ^(yes|y)$ ]]
 	then
 		reboot
+	else
+		echo "All done."
 	fi
 else
 	echo "Run again when you're ready to setup the manjaro environment"
 fi
-
-
-reboot
