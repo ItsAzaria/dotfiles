@@ -55,10 +55,10 @@ then
 	packageList=$( IFS=$' '; echo "${packages[*]}" )
 		
 	#install packages, disable compression
-	PKGEXT=.pkg.tar yay -S "$packageList" --noconfirm
+	PKGEXT=.pkg.tar yay -S $packageList --noconfirm
 	
-	systemctl start docker
-	systemctl enable docker
+	systemctl start docker.service
+	systemctl enable docker.service
 	
 	# Get spacemacs
 	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
@@ -75,3 +75,5 @@ then
 else
 	echo "Run again when you're ready to setup the manjaro environment"
 fi
+
+
