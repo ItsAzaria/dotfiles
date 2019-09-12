@@ -62,6 +62,9 @@ then
 	
 	# Get spacemacs
 	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+	sudo groupadd docker
+	sudo usermod -aG docker $USER
 	
 	# Prompt for reboot
 	read -r -p "Install completed, reboot? [y/n] " response
