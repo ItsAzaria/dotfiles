@@ -28,7 +28,7 @@ then
 	packages+=('lutris multimc5')
 	
 	# Editors
-	packages+=('code emacs')
+	packages+=('code')
 	
 	# Tools
 	packages+=('postman-bin npm masterpdfeditor-free')
