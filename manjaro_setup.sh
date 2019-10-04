@@ -54,6 +54,9 @@ then
 	# GTK theme
 	packages+=('ant-dracula-gtk-theme')
 	
+	# Various dependencies
+	packages+=('vivaldi-ffmpeg-codecs')
+	
 	# Seperate package list with space delimiter
 	packageList=$( IFS=$' '; echo "${packages[*]}" )
 		
