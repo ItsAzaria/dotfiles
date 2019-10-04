@@ -27,6 +27,9 @@ then
 	# Games
 	packages+=('lutris multimc5')
 	
+	#Battle.net dependencies
+	packates+=('lib32-gnutls lib32-libldap lib32-libgpg-error lib32-sqlite lib32-libpulse')
+	
 	# Editors
 	packages+=('code')
 	
